@@ -157,7 +157,7 @@ class Handler {
 	public function checkFatalErrorOnShutDown() {
 		$error = error_get_last();
 		if($error) {
-			ini_set('memory_limit', memory_get_usage(true) + 1000000); // if memory limit exceeded
+			//ini_set('memory_limit', memory_get_usage(true) + 1000000); // if memory limit exceeded
 			$this->callOldHandlers = false;
 			$this->handleError($error['type'], $error['message'], $error['file'], $error['line'], null, 1);
 		}
